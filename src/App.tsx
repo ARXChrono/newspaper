@@ -1,19 +1,16 @@
-import "./App.css";
+import "./App.scss";
 import news from "./news.json";
+import { Main, Side } from "./components";
 
 function App() {
   const { articles } = news;
 
   return (
-    <div className="App">
-      <div>
-        <h1>The Daily News</h1>
-        {articles.map((article) => (
-          <>
-            <p>{JSON.stringify(article)}</p>
-            <img height="200" src={`images/${article.image}`} />
-          </>
-        ))}
+    <div className="app">
+      <h1>The Daily News</h1>
+      <div className="layout-wrapper">
+        <Main />
+        <Side />
       </div>
     </div>
   );
