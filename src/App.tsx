@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="wrapper">
+      <div className="wrapper logo">
         <h1>The Daily News</h1>
       </div>
       <div className="layout-wrapper">

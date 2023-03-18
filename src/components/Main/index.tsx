@@ -12,7 +12,7 @@ const Main = ({ articles, featured }: main) => (
       <article className={styles.featured}>
         <div className={styles["featured-body"]}>
           <h2 className={styles.heading}>{featured.head}</h2>
-          <p>{featured.teaser}</p>
+          <p className={styles.teaser}>{featured.teaser}</p>
           <p className={styles.author}>{featured.byline.text}</p>
         </div>
         {featured?.image && (
