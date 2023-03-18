@@ -1,5 +1,17 @@
-import styles from "./styles.module.scss";
+import styles from "./styles.module.scss"
+import Article from "../../../@types/Article"
 
-const Side = () => <aside className={styles.aside}>--Sidebar</aside>;
+interface Side {
+  featured: String
+  articles: Article[]
+}
 
-export default Side;
+const Side = ({ articles }: Side) => (
+  <aside className={styles.aside}>
+    {articles.map((article) => (
+      <p>{article.head}</p>
+    ))}
+  </aside>
+)
+
+export default Side

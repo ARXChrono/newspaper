@@ -1,4 +1,12 @@
 {
+  "homepage": {
+    "main": {
+      "featured": "779"
+    },
+    "side": {
+      "featured": "038"
+    }
+  },
   "articles": [
     {
       "id": "779",
