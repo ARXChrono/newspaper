@@ -6,4 +6,5 @@ export default interface Article {
   head: String
   teaser: String
   image?: String
+  hideImage?: boolean | false
 }

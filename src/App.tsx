@@ -1,12 +1,61 @@
-import "./App.scss"
+import { useMemo } from "react"
 import news from "./news.json"
 import { Main, Side } from "./components"
+import "./App.scss"
+import Article from "../@types/Article"
+
+interface HomePageData {
+  mainFeaturedArticle: Article
+  mainArticles: Article[]
+  sideFeaturedArticle: Article
+  sideArticles: Article[]
+}
 
 function App() {
   const { articles, homepage } = news
-  const mainFeaturedArticle = articles.find(
-    (article) => homepage.main.featured === article.id
-  )
+  const {
+    mainFeaturedArticle,
+    mainArticles,
+    sideFeaturedArticle,
+    sideArticles,
+  } = useMemo(() => {
+    try {
+      const mainSelections = homepage.main.selection
+      const sideSelections = homepage.side.selection
+
+      return {
+        mainFeaturedArticle: articles.find(
+          (article) => homepage.main.featured === article.id
+        ),
+        sideFeaturedArticle: articles.find(
+          (article) => homepage.side.featured === article.id
+        ),
+        mainArticles: mainSelections.map((selection) => {
+          const article = articles.find(
+            (article) => selection.id === article.id
+          )
+          return {
+            ...article,
+            id: selection.id,
+            hideImage: selection["hideImage"],
+          }
+        }),
+        sideArticles: sideSelections.map((selection) => {
+          const article = articles.find(
+            (article) => selection.id === article.id
+          )
+          return {
+            ...article,
+            id: selection.id,
+            hideImage: selection["hideImage"],
+          }
+        }),
+      }
+    } catch (e) {
+      console.log(e)
+      return
+    }
+  }, [])
 
   return (
     <div className="app">
@@ -14,11 +63,8 @@ function App() {
         <h1>The Daily News</h1>
       </div>
       <div className="layout-wrapper">
-        <Main featured={mainFeaturedArticle} articles={articles.slice(1, 4)} />
-        <Side
-          featured={homepage.side.featured}
-          articles={articles.slice(4, 8)}
-        />
+        <Main featured={mainFeaturedArticle} articles={mainArticles} />
+        <Side featured={sideFeaturedArticle} articles={sideArticles} />
       </div>
     </div>
   )

@@ -37,3 +37,13 @@ h2,
 h3 {
   margin-bottom: var(--space-sm);
 }
+
+a {
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  &:hover,
+  &:focus {
+    color: var(--color-heading-interact);
+  }
+}

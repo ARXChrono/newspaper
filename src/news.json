@@ -1,10 +1,23 @@
 {
   "homepage": {
     "main": {
-      "featured": "779"
+      "featured": "779",
+      "selection": [
+        { "id": "509", "hideImage": false },
+        { "id": "310", "hideImage": true },
+        { "id": "001", "hideImage": true },
+        { "id": "204", "hideImage": false }
+      ]
     },
     "side": {
-      "featured": "038"
+      "featured": "038",
+      "selection": [
+        { "id": "377", "hideImage": true },
+        { "id": "525", "hideImage": true },
+        { "id": "307", "hideImage": true },
+        { "id": "108", "hideImage": true },
+        { "id": "596", "hideImage": true }
+      ]
     }
   },
   "articles": [
