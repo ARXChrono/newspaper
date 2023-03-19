@@ -57,13 +57,7 @@ function App() {
         }
       }),
     }
-  }, [
-    articles,
-    homepage.main.featured,
-    homepage.main.selection,
-    homepage.side.featured,
-    homepage.side.selection,
-  ])
+  }, [articles, homepage])
 
   return (
     <div className="app">
