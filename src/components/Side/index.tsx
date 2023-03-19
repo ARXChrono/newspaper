@@ -30,13 +30,20 @@ const Side = ({ articles, featured }: Side) => (
       </article>
     )}
 
-    {articles.map((article) => (
-      <article key={`side-article-${article.id}`} className={styles.article}>
-        <a href="#" className="link">
-          <h3 className={styles.heading}>{article.head}</h3>
-        </a>
-      </article>
-    ))}
+    {articles && (
+      <div className={styles["article-wrap"]}>
+        {articles.map((article) => (
+          <article
+            key={`side-article-${article.id}`}
+            className={styles.article}
+          >
+            <a href="#" className="link">
+              <h3 className={styles.heading}>{article.head}</h3>
+            </a>
+          </article>
+        ))}
+      </div>
+    )}
   </aside>
 )
 

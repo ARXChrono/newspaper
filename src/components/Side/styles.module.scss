@@ -30,7 +30,9 @@
 
 // Featured Article
 .featured {
+  border-bottom: 1px solid var(--color-border);
   @media only screen and (min-width: 1200px) {
+    border-bottom: none;
     border-left: 1px solid var(--color-border);
     padding-left: var(--space-sm);
     height: 345px;
@@ -60,12 +62,15 @@
     }
   }
 }
-
-.article {
+.article-wrap {
   @media only screen and (min-width: 1200px) {
     padding-left: var(--space-sm);
     border-left: 1px solid var(--color-border);
+    flex: 1;
   }
+}
+
+.article {
   &:not(:last-child) {
     &::after {
       content: "";
