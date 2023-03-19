@@ -2,17 +2,7 @@ import { useMemo } from "react"
 import news from "./news.json"
 import { Main, Side } from "./components"
 import "./App.scss"
-
-interface Article {
-  id: string
-  byline: {
-    text: string
-  }
-  head: string
-  teaser: string
-  image?: string
-  hideImage?: boolean
-}
+import Article from "../@types/Article"
 
 interface HomePageData {
   mainFeaturedArticle: Article | undefined

@@ -1,10 +1,10 @@
 export default interface Article {
-  id: String
+  id: string
   byline: {
-    text: String
+    text: string
   }
-  head: String
-  teaser: String
-  image?: String
+  head: string
+  teaser: string
+  image?: string
   hideImage?: boolean
 }

@@ -1,4 +1,4 @@
 export default interface Selection {
-  id: String
-  hideImage?: Boolean
+  id: string
+  hideImage?: boolean
 }

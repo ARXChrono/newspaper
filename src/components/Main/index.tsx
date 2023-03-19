@@ -23,6 +23,7 @@ const Main = ({ articles, featured }: main) => (
               <img
                 className={styles["featured-img"]}
                 src={`/images/${featured.image}`}
+                alt={featured.head}
               />
             </a>
           </div>
@@ -45,6 +46,7 @@ const Main = ({ articles, featured }: main) => (
                   <img
                     className={styles["article-img"]}
                     src={`/images/${article.image}`}
+                    alt={article.head}
                   />
                 </a>
               </div>

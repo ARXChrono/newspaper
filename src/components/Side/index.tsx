@@ -16,6 +16,7 @@ const Side = ({ articles, featured }: Side) => (
               <img
                 className={styles["featured-img"]}
                 src={`/images/${featured.image}`}
+                alt={featured.head}
               />
             </a>
           </div>
