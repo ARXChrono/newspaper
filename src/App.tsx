@@ -5,15 +5,20 @@ import "./App.scss"
 import Article from "../@types/Article"
 
 interface HomePageData {
-  mainFeaturedArticle: Article | undefined
+  mainFeaturedArticle: Article
   mainArticles: Article[]
-  sideFeaturedArticle: Article | undefined
+  sideFeaturedArticle: Article
   sideArticles: Article[]
 }
 
 function App() {
   const { articles, homepage } = news
-  const data: HomePageData = useMemo(() => {
+  const {
+    mainFeaturedArticle,
+    mainArticles,
+    sideFeaturedArticle,
+    sideArticles,
+  }: HomePageData = useMemo(() => {
     const mainSelections = homepage.main.selection
     const sideSelections = homepage.side.selection
     const fallback = {
@@ -55,14 +60,8 @@ function App() {
         <h1>The Daily News</h1>
       </div>
       <div className="layout-wrapper">
-        <Main
-          featured={data.mainFeaturedArticle}
-          articles={data.mainArticles}
-        />
-        <Side
-          featured={data.sideFeaturedArticle}
-          articles={data.sideArticles}
-        />
+        <Main featured={mainFeaturedArticle} articles={mainArticles} />
+        <Side featured={sideFeaturedArticle} articles={sideArticles} />
       </div>
     </div>
   )
